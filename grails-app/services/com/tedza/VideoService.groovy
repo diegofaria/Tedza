@@ -17,10 +17,6 @@ class VideoService {
         def count = 0
     	for(row in table) {
             count++
-            if (count < 600) {
-                println "menor que 600"
-                continue;
-            }
 
     		def publishDate = row.select("td:eq(0)").text()
     		def downloads = row.select("td:eq(4)")

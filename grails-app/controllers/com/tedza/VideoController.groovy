@@ -8,17 +8,17 @@ class VideoController {
     def videoService
 
     def index() {
-        def finished = false
-        while(!finished) {
-            try {
-                finished = videoService.crawl()
-            }
-            catch(Exception e) {
-                println e.getMessage()
-                println "DEU ERRO NESSA PORRA!"
-                finished = false
-            }
-        }
+        //def finished = false
+        //while(!finished) {
+        //    try {
+        //        finished = videoService.crawl()
+        //    }
+        //    catch(Exception e) {
+        //        println e.getMessage()
+        //        println "DEU ERRO NESSA PORRA!"
+        //        finished = false
+        //    }
+        //}
         redirect(action: "list", params: params)
     }
 
