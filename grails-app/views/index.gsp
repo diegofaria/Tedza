@@ -67,6 +67,11 @@
 					</fieldset>
 				</form>
 			</div>
+			<div id="video-player">
+				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none" data-setup="{}">
+				   	<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+				</video>
+			</div>
 		  </div>
 		  <footer>
 			<a href="javascript:void(0)">Subscribe</a>

@@ -1,5 +1,8 @@
 var step = 0;
 $(function() {
+
+	var player = _V_("player");
+
     $("ul.buttons a").click(function(event) {
       event.preventDefault();
     
@@ -21,17 +24,16 @@ $(function() {
 		  $("#watchBtn").fadeIn("slow");
 		  $.post("/video/getResults", { q1: $("#hq1").val(), q2: $("#hq2").val(), q3: $("#hq3").val() },
 	        function(data) {
-			  	var videoDiv = $(document.createElement("div"));
-			  	if (data.length > 0) {
-			  		videoDiv.append("teste");
+			  	var videoDiv = $("#video-player");
+			  	if (data.length > 0) {	
+			  		player.src(data[0][0].high);
 			  	}
 			  	else {
-			  		videoDiv.append("no videos found");
+			  		alert('no videos found');
 			  	}
 			  	
 			  	$("#q3").fadeOut("fast", function() {
 		  			$("#q3").after(videoDiv);
-		  			videoDiv.hide();
 		  			videoDiv.fadeIn("slow");
 		  		});
 		    }
@@ -45,7 +47,7 @@ function changeBreadCrumb() {
 	breadcrumb.fadeOut("fast", function () {
 		var html;
 		if (step == 0) html = "";
-	if (step > 0) html = "IDEAS for <a href=\"javascript:void(0)\" onclick=\"historyBack(0)\" title=\"Click to get back to beginning\">" + $("#hq1").val() + "</a>";
+		if (step > 0) html = "IDEAS for <a href=\"javascript:void(0)\" onclick=\"historyBack(0)\" title=\"Click to get back to beginning\">" + $("#hq1").val() + "</a>";
 	    if (step > 1) html += " at <a href=\"javascript:void(0)\" onclick=\"historyBack(1)\" title=\"Click to get back to second step\">" + $("#hq2").val() + "</a>";
 	    if (step > 2) html += " to be <a href=\"javascript:void(0)\" onclick=\"historyBack(2)\" title=\"Click to get back to last step\">" + $("#hq3").val() + "</a>";
 		
