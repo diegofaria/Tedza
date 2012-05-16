@@ -19,10 +19,21 @@ $(function() {
 	  }
 	  else {
 		  $("#watchBtn").fadeIn("slow");
-		  alert
-		  $.post("/filter/getResults", { q1: $("#hq1").val(), q2: $("#hq2").val(), q3: $("#hq3").val() },
+		  $.post("/video/getResults", { q1: $("#hq1").val(), q2: $("#hq2").val(), q3: $("#hq3").val() },
 	        function(data) {
-		        alert(data);
+			  	var videoDiv = $(document.createElement("div"));
+			  	if (data.length > 0) {
+			  		videoDiv.append("teste");
+			  	}
+			  	else {
+			  		videoDiv.append("no videos found");
+			  	}
+			  	
+			  	$("#q3").fadeOut("fast", function() {
+		  			$("#q3").after(videoDiv);
+		  			videoDiv.hide();
+		  			videoDiv.fadeIn("slow");
+		  		});
 		    }
 		  );
 	  }
