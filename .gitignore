@@ -1,0 +1,10 @@
+*.class
+.classpath
+.project
+.settings/
+target-eclipse/
+
+# Package Files #
+*.jar
+*.war
+*.ear
