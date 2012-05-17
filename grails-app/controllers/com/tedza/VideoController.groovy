@@ -1,5 +1,7 @@
 package com.tedza
 
+import grails.converters.JSON
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class VideoController {
@@ -112,4 +114,26 @@ class VideoController {
             redirect(action: "show", id: params.id)
         }
     }
+
+	def getResults() {
+		def q1 = params.q1
+		def q2 = params.q2
+		def q3 = params.q3
+		println q1
+		Tag tag = Tag.findByName(q1)
+		Video video = new Video(tags: [tag])
+		List<Video> videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}'")
+		
+		videos.each {
+			
+		}
+
+		println videos.size()
+		
+		render videos as JSON
+		
+//		render(contentType: "text/json") {
+//			response(success: "true")
+//		}
+	}
 }

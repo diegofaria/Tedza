@@ -1,116 +1,93 @@
 <!doctype html>
-<html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
-		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
-			}
-
-			.ie6 #status {
-				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-			}
-
-			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
-				margin-bottom: 0.6em;
-				padding: 0;
-			}
-
-			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
-			}
-
-			#page-body {
-				margin: 2em 1em 1.25em 18em;
-			}
-
-			h2 {
-				margin-top: 1em;
-				margin-bottom: 0.3em;
-				font-size: 1em;
-			}
-
-			p {
-				margin: 0.25em 0;
-			}
-
-			#controller-list ul {
-				list-style-position: inside;
-			}
-
-			#controller-list li {
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
-
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
-
-				#page-body {
-					margin: 0 1em 1em;
-				}
-
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
-		</style>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <title></title>
+	  <meta name="description" content="">
+	  <meta name="viewport" content="width=device-width">
+	  <link rel="stylesheet" href="css/style.css">
+	  <script src="/js/modernizr-2.5.3.min.js"></script>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
+	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	  <div class="page">
+		  <header>
+			<img src="/images/tedza.gif" />
 			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+				<li>Anderson Gomes</li>
 			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
+		  </header>
+		  <div id="main" role="main">
+		  	<div id="breadcrumb"></div>
+		  	<div id="q1" class="question">
+				<h2>What kind of geek are you<span>?</span></h2>
+				<a href="javascript:void(0)" class="add">Suggest new...</a>
+				<ul class="buttons">
+					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Technology</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
 				</ul>
 			</div>
-		</div>
+			<div id="q2" class="question">
+				<h2>How would you like to feel<span>?</span></h2>
+				<a href="javascript:void(0)" class="add">Suggest new...</a>
+				<ul class="buttons">
+					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Ecofriend</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
+				</ul>
+			</div>
+			<div id="q3" class="question">
+				<h2>Select a playlist <span>...</span></h2>
+				<a href="javascript:void(0)" class="add">Suggest new...</a>
+				<ul class="buttons">
+					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Ecofriend</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
+				</ul>
+				<form action="/" method="post">
+					<fieldset>
+						<input type="hidden" id="hq1" name="q1" value="" />
+						<input type="hidden" id="hq2" name="q2" value="" />
+						<input type="hidden" id="hq3" name="q3" value="" />
+						<input type="submit" id="watchBtn" value="Watch" />
+					</fieldset>
+				</form>
+			</div>
+			<div id="video-player">
+				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none" data-setup="{}">
+				   	<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+				</video>
+			</div>
+		  </div>
+		  <footer>
+			<a href="javascript:void(0)">Subscribe</a>
+			<a href="javascript:void(0)">Team</a>
+			<a href="javascript:void(0)">About</a>
+		  </footer>
+	  </div>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	  <script src="js/plugins.js"></script>
+	  <script src="js/script.js"></script>
+	  <script>
+	    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	    g.src=('https:'==location.protocol?'//ssl':'http://www')+'.google-analytics.com/ga.js';
+	    s.parentNode.insertBefore(g,s)}(document,'script'));
+	  </script>
 	</body>
 </html>
