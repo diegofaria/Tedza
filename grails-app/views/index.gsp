@@ -27,36 +27,36 @@
 				<h2>What kind of geek are you<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Technology</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>Hightech</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Design</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>Engaged</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Science</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Startup</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Travel</span></li>
 				</ul>
 			</div>
 			<div id="q2" class="question">
-				<h2>How would you like to feel<span>?</span></h2>
+				<h2>How much time do you have now<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Ecofriend</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_5min.png" /></a><span>5 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_10min.png" /></a><span>10 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_15min.png" /></a><span>15 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_30min.png" /></a><span>30 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_45min.png" /></a><span>45 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_60min.png" /></a><span>60 minutes</span></li>
 				</ul>
 			</div>
 			<div id="q3" class="question">
 				<h2>Select a playlist <span>...</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_windhill.gif" /></a><span>Ecofriend</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_gears.gif" /></a><span>Gears</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_beer.gif" /></a><span>Beer</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_game.gif" /></a><span>Game</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_microscope.gif" /></a><span>Microscope</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_mushroom.gif" /></a><span>Mushroom</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>Hightech</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Design</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>Engaged</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Science</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Startup</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Travel</span></li>
 				</ul>
 				<form action="/" method="post">
 					<fieldset>

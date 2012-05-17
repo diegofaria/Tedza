@@ -47,8 +47,8 @@ function changeBreadCrumb() {
 	breadcrumb.fadeOut("fast", function () {
 		var html;
 		if (step == 0) html = "";
-		if (step > 0) html = "IDEAS for <a href=\"javascript:void(0)\" onclick=\"historyBack(0)\" title=\"Click to get back to beginning\">" + $("#hq1").val() + "</a>";
-	    if (step > 1) html += " at <a href=\"javascript:void(0)\" onclick=\"historyBack(1)\" title=\"Click to get back to second step\">" + $("#hq2").val() + "</a>";
+		if (step > 0) html = "IDEAS for <a href=\"javascript:void(0)\" onclick=\"historyBack(0)\" title=\"Click to get back to beginning\">" + $("#hq1").val() + " GEEK</a>";
+	    if (step > 1) html += " in <a href=\"javascript:void(0)\" onclick=\"historyBack(1)\" title=\"Click to get back to second step\">" + $("#hq2").val() + "</a>";
 	    if (step > 2) html += " to be <a href=\"javascript:void(0)\" onclick=\"historyBack(2)\" title=\"Click to get back to last step\">" + $("#hq3").val() + "</a>";
 		
 	    breadcrumb.html(html);
