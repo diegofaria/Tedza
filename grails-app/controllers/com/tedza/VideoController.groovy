@@ -122,8 +122,16 @@ class VideoController {
 		println q1
 		Tag tag = Tag.findByName(q1)
 		Video video = new Video(tags: [tag])
+        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
+        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
+        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
+        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
 		List<Video> videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}'")
-		
+		println "EXECUTOUUUUUUUUUUUUUU";
+        println "EXECUTOUUUUUUUUUUUUUU";
+        println "EXECUTOUUUUUUUUUUUUUU";
+        println "EXECUTOUUUUUUUUUUUUUU";
+
 		videos.each {
 			
 		}
