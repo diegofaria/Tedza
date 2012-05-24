@@ -33,8 +33,10 @@ class VideoService {
                 continue   
             }
 
+            println "Vai criar objeto video"
 	    	Video video = new Video()	
-
+            println "CRIOU objeto video"
+            
     		def fullDuration = row.select("td:eq(3)").text()
     		def duration = fullDuration.split(':')
     		def intMinutes = new Integer(duration[0])
