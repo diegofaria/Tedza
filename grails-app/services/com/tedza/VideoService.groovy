@@ -21,7 +21,7 @@ class VideoService {
     		def publishDate = row.select("td:eq(0)").text()
     		def downloads = row.select("td:eq(4)")
     		if (publishDate == "" ) {
-                println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM SEM PUBLISH DATE"
+                println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM SEM PUBLISH DATE, E CODIGO ATUALIZADO :)"
                 continue
             }
             if (downloads == "") {
