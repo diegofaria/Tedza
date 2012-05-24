@@ -28,6 +28,9 @@ class VideoService {
                 println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM SEM DOWNLOAD"
                 continue
             }
+
+            println "Vai realizar uma pesquisa no objeto video"
+
             if (Video.findByTitle(row.select("td:eq(2)").select("a").text()) != null) {
                 println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM DUPLICADO"
                 continue   
