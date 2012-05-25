@@ -1,13 +1,12 @@
 var step = 0;
 $(function() {
-
 	var player = _V_("player");
 
     $("ul.buttons a").click(function(event) {
       event.preventDefault();
     
       var elem = $(this);
-      var category = elem.next().attr("id");
+      var category = elem.next().text();
       var div = elem.closest("div");
       var divId = div.attr("id");
       $("#h" + divId).val(category);

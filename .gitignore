@@ -10,6 +10,7 @@ stacktrace.log
 /cobertura.ser
 .DS_Store
 /target/
+/target-eclipse/
 /target/*.log
 /out/
 /web-app/plugins

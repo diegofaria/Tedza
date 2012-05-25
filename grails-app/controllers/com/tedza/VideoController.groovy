@@ -10,17 +10,6 @@ class VideoController {
     def videoService
 
     def index() {
-        //def finished = false
-        //while(!finished) {
-        //    try {
-        //        finished = videoService.crawl()
-        //    }
-        //    catch(Exception e) {
-        //        println e.getMessage()
-        //        println "DEU ERRO NESSA PORRA!"
-        //        finished = false
-        //    }
-        //}
         redirect(action: "list", params: params)
     }
 
@@ -115,12 +104,26 @@ class VideoController {
         }
     }
 
+	def grabVideos() {
+		def finished = false
+		while(!finished) {
+		    try {
+		        finished = videoService.crawl()
+		    }
+		    catch(Exception e) {
+		        println e.getMessage()
+		        println "DEU ERRO NESSA PORRA!"
+		        finished = false
+		    }
+		}
+	}
+	
 	def getResults() {
 		def q1 = params.q1
-		def q2 = new Integer(params.q2)
+		def q2 = params.q2
 		def q3 = params.q3
-        def videoLength = q2 * 60
-
+        def videoLength = Integer.parseInt(params.q2.split(" ")[0]) * 60
+		
         println "q1: " + q1 + "   duration: " + videoLength + "    q3: " + q3
 		def videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}' and v.duration <= '${videoLength}'")
 

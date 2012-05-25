@@ -27,7 +27,7 @@
 				<h2>What kind of geek are you<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span id="Technology">Hightech</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>Hightech</span></li>
 					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Design</span></li>
 					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>Engaged</span></li>
 					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Science</span></li>
@@ -39,12 +39,12 @@
 				<h2>How much time do you have now<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_5min.png" /></a><span id="5">5 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_10min.png" /></a><span id="10">10 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_15min.png" /></a><span id="15">15 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_30min.png" /></a><span id="30">30 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_45min.png" /></a><span id="45">45 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_60min.png" /></a><span id="60">60 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_5min.png" /></a><span>5 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_10min.png" /></a><span>10 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_15min.png" /></a><span>15 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_30min.png" /></a><span>30 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_45min.png" /></a><span>45 minutes</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_60min.png" /></a><span>60 minutes</span></li>
 				</ul>
 			</div>
 			<div id="q3" class="question">
