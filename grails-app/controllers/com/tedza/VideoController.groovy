@@ -117,23 +117,17 @@ class VideoController {
 
 	def getResults() {
 		def q1 = params.q1
-		def q2 = params.q2
+		def q2 = new Integer(params.q2)
 		def q3 = params.q3
-		println q1
+		println "q1: " + q1 + "   q2: " + q2 + "    q3: " + q3
 		Tag tag = Tag.findByName(q1)
 		Video video = new Video(tags: [tag])
-        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
-        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
-        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
-        println "VAI EXECUTAR A QUERY PARA ACHAR OS VIDEOS";
-		List<Video> videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}'")
-		println "EXECUTOUUUUUUUUUUUUUU";
-        println "EXECUTOUUUUUUUUUUUUUU";
-        println "EXECUTOUUUUUUUUUUUUUU";
-        println "EXECUTOUUUUUUUUUUUUUU";
+
+        def videoLength = q2 * 60
+		List<Video> videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}' and v.duration <= '${videoLength}'")
 
 		videos.each {
-			
+
 		}
 
 		println videos.size()

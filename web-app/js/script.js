@@ -7,7 +7,7 @@ $(function() {
       event.preventDefault();
     
       var elem = $(this);
-      var category = elem.next().text();
+      var category = elem.next().attr("id");
       var div = elem.closest("div");
       var divId = div.attr("id");
       $("#h" + divId).val(category);
