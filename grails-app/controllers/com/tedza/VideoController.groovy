@@ -2,9 +2,22 @@ package com.tedza
 
 import grails.converters.JSON
 
+import org.apache.commons.lang.StringUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 class VideoController {
+	
+	enum Type {
+		TECHNOLOGY("Hightech"), DESIGN("Design"), ENGAGED("Engaged"), SCIENCE("Science"), STARTUP("Startup"), TRAVEL("Travel")
+		final String id
+		private Type(String id) { this.id = id }
+		static Type byId(String id) {
+			values().find { it.id == id }
+		}
+		String toString() {
+			return StringUtils.capitalize(name().toLowerCase())
+		}
+	}
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def videoService
@@ -122,9 +135,11 @@ class VideoController {
 		def q1 = params.q1
 		def q2 = params.q2
 		def q3 = params.q3
+		
+		Type type = Type.byId(q1)
         def videoLength = Integer.parseInt(params.q2.split(" ")[0]) * 60
 		
-        println "q1: " + q1 + "   duration: " + videoLength + "    q3: " + q3
+        println "q1: " + type + "   duration: " + videoLength + "    q3: " + q3
 		def videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}' and v.duration <= '${videoLength}'")
 
 		videos.eachWithIndex() { result, i ->
