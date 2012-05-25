@@ -16,10 +16,12 @@
 	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	  <div class="page">
 		  <header>
-			<img src="/images/tedza.gif" />
+			<a href="/"><img src="/images/tedza.gif" /></a>
+			<!-- 
 			<ul>
 				<li>Anderson Gomes</li>
 			</ul>
+			 -->
 		  </header>
 		  <div id="main" role="main">
 		  	<div id="breadcrumb"></div>
@@ -51,21 +53,21 @@
 				<h2>Select a playlist <span>...</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span id="Technology2	">Hightech</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Design</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>Engaged</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Science</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Startup</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Travel</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>What's Next in Tech</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Tales of Invention</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>The Creative Spark</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Technology, History and Destiny</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Medicine Without Borders</span></li>
+					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Bold Predictions, Stern Warnings</span></li>
 				</ul>
-				<form action="/" method="post">
-					<fieldset>
+				<!--<form action="/" method="post">
+					<fieldset>-->
 						<input type="hidden" id="hq1" name="q1" value="" />
 						<input type="hidden" id="hq2" name="q2" value="" />
 						<input type="hidden" id="hq3" name="q3" value="" />
-						<input type="submit" id="watchBtn" value="Watch" />
-					</fieldset>
-				</form>
+						<!--<input type="submit" id="watchBtn" value="Watch" /> -->
+					<!--</fieldset>
+				</form>-->
 			</div>
 			<div id="video-player">
 				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none" data-setup="{}">

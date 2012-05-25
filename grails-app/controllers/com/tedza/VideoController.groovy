@@ -137,28 +137,26 @@ class VideoController {
 		def q3 = params.q3
 		
 		Type type = Type.byId(q1)
-        def videoLength = Integer.parseInt(params.q2.split(" ")[0]) * 60
+        def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
+        println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
-        println "q1: " + type + "   duration: " + videoLength + "    q3: " + q3
-		def videos = Video.executeQuery("from Video v, IN (v.tags) as t where t.name = '${q1}' and v.duration <= '${videoLength}'")
-
-		videos.eachWithIndex() { result, i ->
-            
-            //a posicao zero traz todos os videos encontrados na query
-            result[0].each() { video ->
-                //iterando nos videos
-                video.themes.each() { theme -> 
-                    println theme.name
-                }
-            }
+		def videos = Video.executeQuery("from Video v, IN (v.tags) as tags, IN (v.themes) as themes where tags.name = '${q1}' and themes.name = '${q3}'")
+		int duration = 0
+		List<Video> videoPlaylist
+		for (video in videos) {
+			// if the video duration plus the sum of playlist exceeds the total, 
+			// skip to the next
+			if ((video.duration + duration) > totalDuration) continue
+			
+			duration += video.duration
+			videoPlaylist.add(video)
+			
+			// if the difference between the total minutes and playlist
+			// is lower than 5 minutes, the playlist is done
+			if ((totalDuration - duration) < 300) break
 		}
 
-		println videos.size()
-		
-		render videos as JSON
-		
-//		render(contentType: "text/json") {
-//			response(success: "true")
-//		}
+		println videoPlaylist.size()		
+		render videoPlaylist as JSON
 	}
 }
