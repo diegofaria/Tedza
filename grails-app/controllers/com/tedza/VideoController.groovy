@@ -6,6 +6,8 @@ import org.apache.commons.lang.StringUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 class VideoController {
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	def videoService
 	
 	enum Type {
 		TECHNOLOGY("Hightech"), DESIGN("Design"), ENGAGED("Engaged"), SCIENCE("Science"), STARTUP("Startup"), TRAVEL("Travel")
@@ -18,9 +20,6 @@ class VideoController {
 			return StringUtils.capitalize(name().toLowerCase())
 		}
 	}
-
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-    def videoService
 
     def index() {
         redirect(action: "list", params: params)
@@ -140,7 +139,9 @@ class VideoController {
         def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
         println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
-		def videos = Video.executeQuery("from Video v, IN (v.tags) as tags, IN (v.themes) as themes where tags.name = '${q1}' and themes.name = '${q3}'")
+		def videos = Video.executeQuery("select v from Video v " +
+			                            "IN (v.tags) as tags, IN (v.themes) as themes " +
+										"where tags.name = '${q1}' and themes.name = '${q3}'")
 		int duration = 0
 		List<Video> videoPlaylist
 		for (video in videos) {

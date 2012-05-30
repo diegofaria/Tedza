@@ -9,13 +9,13 @@ import org.jsoup.*
 class VideoService {
 
     def crawl() {
-    	@Grab('org.jsoup:jsoup:1.6.1')
-    	def sdf = new SimpleDateFormat("MMM yyyy")
+    	def sdf = new SimpleDateFormat("MMM yyyy", Locale.ENGLISH)
     	def page = Jsoup.connect("http://www.ted.com/talks/quick-list").get()
     	def table = page.select("table.downloads tr")
 
         def count = 0
     	for(row in table) {
+			if (row.select("th").size() > 0) continue
             count++
 
     		def publishDate = row.select("td:eq(0)").text()
