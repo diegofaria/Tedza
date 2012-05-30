@@ -139,11 +139,10 @@ class VideoController {
         def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
         println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
-		def videos = Video.executeQuery("select v from Video v " +
-			                            "IN (v.tags) as tags, IN (v.themes) as themes " +
-										"where tags.name = '${q1}' and themes.name = '${q3}'")
+		def videos = Video.executeQuery("SELECT v FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " + 
+										"WHERE t.name = '${type}' AND th.name = '${q3}'")
 		int duration = 0
-		List<Video> videoPlaylist
+		List<Video> videoPlaylist = new ArrayList<Video>()
 		for (video in videos) {
 			// if the video duration plus the sum of playlist exceeds the total, 
 			// skip to the next
@@ -157,7 +156,7 @@ class VideoController {
 			if ((totalDuration - duration) < 300) break
 		}
 
-		println videoPlaylist.size()		
+		//println videoPlaylist.size()		
 		render videoPlaylist as JSON
 	}
 }
