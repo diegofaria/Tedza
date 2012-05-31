@@ -19,12 +19,13 @@ class VideoService {
             count++
 
     		def publishDate = row.select("td:eq(0)").text()
-    		def downloads = row.select("td:eq(4)")
-    		if (publishDate == "" ) {
+    		if (publishDate.isEmpty()) {
                 println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM SEM PUBLISH DATE, E CODIGO ATUALIZADO :)"
                 continue
             }
-            if (downloads == "") {
+
+            def downloads = row.select("td:eq(4)")
+            if (downloads.isEmpty()) {
                 println "!!!!!!!!!!!!!!!!!!!!!! ACHOU UM SEM DOWNLOAD"
                 continue
             }
@@ -48,7 +49,7 @@ class VideoService {
     		video.duration = seconds
 
     		def eventName = row.select("td:eq(1)").text()
-    		def event = Event.findByName(eventName) ?: new Event(name: eventName).save(flush: true)
+    		def event = Event.findByName(eventName) ?: new Event(name: eventName).save(failOnError: true)
     		video.event = event
 
 			def title = row.select("td:eq(2)")
@@ -64,12 +65,16 @@ class VideoService {
     		themeTags.each{ theme ->
     			def themeName = theme.select("a").text()
     			try {
-                    Theme themeInstance = Theme.findByName(themeName) ?: new Theme(name: themeName).save(flush: true)
+                    Theme themeInstance = Theme.findByName(themeName) ?: new Theme(name: themeName).save(failOnError: true)
+                    if (!themeInstance.validate())
+                    {
+                        themeInstance.errors.each{println(it)}
+                    }
                     video.addToThemes(themeInstance)
                 }
                 catch(Exception e) {
                     println "!!!!!!!!!!!!!!!!!!! ERRO AO SALVAR THEME"   
-                    println e.printStackTrace()             
+                    e.printStackTrace()
                 }
     		}
 
@@ -77,17 +82,17 @@ class VideoService {
     		tagsTags.each { tags ->
     			def tagName = tags.select("a").text()
                 try {
-                    Tag tag = Tag.findByName(tagName) ?: new Tag(name: tagName).save(flush: true)
+                    Tag tag = Tag.findByName(tagName) ?: new Tag(name: tagName).save(failOnError: true)
                     video.addToTags(tag)
                 }
                 catch(Exception e) {
                     println "!!!!!!!!!!!!!!!!!!! TAG COM ERRO"
-                    println e.printStackTrace()             
+                    e.getPrintStackTrace()
                 }
     		}
 
             try {
-                def saved = Video.findByTitle(video.title) ?: video.save(flush: true)
+                def saved = Video.findByTitle(video.title) ?: video.save(failOnError: true)
                 println video.title    
             }
             catch(Exception e) {

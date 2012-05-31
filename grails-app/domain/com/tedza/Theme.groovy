@@ -7,5 +7,7 @@ class Theme {
 	String imageUrl	
 	
     static constraints = {
+    	description(nullable:true);
+    	imageUrl(nullable:true);
     }
 }
