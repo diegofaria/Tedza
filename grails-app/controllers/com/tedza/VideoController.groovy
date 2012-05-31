@@ -166,7 +166,7 @@ class VideoController {
 			
 			// if the difference between the total minutes and playlist
 			// is lower than 5 minutes, the playlist is done
-			if ((totalDuration - duration) < 300) break
+			if ((totalDuration - duration) < 180) break
 		}
 
         videoPlaylist = videoPlaylist.sort { a, b ->
