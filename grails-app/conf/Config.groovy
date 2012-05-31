@@ -65,9 +65,11 @@ environments {
         grails.logging.jul.usebridge = true 
         grails.serverURL = "http://localhost:8080"
         grails.app.context = "/"
+		grails.gsp.enable.reload = true;
     }
     production {
         grails.logging.jul.usebridge = false
+		grails.gsp.enable.reload = false;
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }

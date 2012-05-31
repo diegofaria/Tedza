@@ -151,7 +151,8 @@ class VideoController {
         println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
 		def videos = Video.executeQuery("SELECT new Map(v.id as id, v.title as title, v.duration as duration, v.low as low, v.medium as medium, v.high as high, v.date as date, v.event as event) FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " +
-										"WHERE t.name = '${type}' AND th.name = '${q3}' AND v.duration <= ${totalDuration}")
+										"WHERE t.name = '${type}' AND th.name = '${q3}' AND v.duration <= ${totalDuration} " +
+										"order by random()")
 		println videos.size()
 
         int duration = 0
@@ -168,15 +169,6 @@ class VideoController {
 			// is lower than 5 minutes, the playlist is done
 			if ((totalDuration - duration) < 180) break
 		}
-
-        videoPlaylist = videoPlaylist.sort { a, b ->
-            def rand = Math.random() 
-            if (rand <= 0.5) {
-                return -1
-            } else {
-                return +1
-            }
-        }
 
 		render videoPlaylist as JSON
 	}
