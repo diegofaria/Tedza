@@ -140,7 +140,7 @@ class VideoController {
         println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
 		def videos = Video.executeQuery("SELECT v FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " + 
-										"WHERE t.name = '${type}' AND th.name = '${q3}'")
+										"WHERE t.name = '${type}' AND th.name = '${q3}' AND v.duration <= ${totalDuration}")
 		int duration = 0
 		List<Video> videoPlaylist = new ArrayList<Video>()
 		for (video in videos) {
