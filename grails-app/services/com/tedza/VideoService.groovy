@@ -68,7 +68,8 @@ class VideoService {
                     video.addToThemes(themeInstance)
                 }
                 catch(Exception e) {
-                    println "!!!!!!!!!!!!!!!!!!! ERRO AO SALVAR THEME"                
+                    println "!!!!!!!!!!!!!!!!!!! ERRO AO SALVAR THEME"   
+                    println e.printStackTrace()             
                 }
     		}
 
@@ -81,6 +82,7 @@ class VideoService {
                 }
                 catch(Exception e) {
                     println "!!!!!!!!!!!!!!!!!!! TAG COM ERRO"
+                    println e.printStackTrace()             
                 }
     		}
 
@@ -94,5 +96,26 @@ class VideoService {
     	}
 
     	return true
+    }
+
+    def crawlThemes() {
+        def page = Jsoup.connect("http://www.ted.com/themes").get()    
+        def allThemes = page.select("div.box.themes ul.clearfix li")
+        for(theme in allThemes) {
+            def img = theme.select("div.col a img")
+            def alt = img.attr("alt")
+            def src = img.attr("src")
+            def description = theme.select("p.talk_count + p").text()
+            def newTheme = Theme.findByName(alt)
+
+            if (!newTheme) {
+                newTheme = new Theme()
+            }
+
+            newTheme.name = alt
+            newTheme.description = description
+            newTheme.imageUrl = src
+            newTheme.save()
+        }
     }
 }

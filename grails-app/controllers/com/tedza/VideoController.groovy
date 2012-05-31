@@ -129,6 +129,17 @@ class VideoController {
 		    }
 		}
 	}
+
+    def grabThemes() {
+        try {
+            println "Vai pegar themes"
+            videoService.crawlThemes()
+            println "Terminou a pesquisa de themes"
+        } catch(Exception e){
+            println "Terminou até terminou... MAS DEU PAU!!!!! >:) "
+            println e
+        }
+    }
 	
 	def getResults() {
 		def q1 = params.q1
@@ -139,9 +150,11 @@ class VideoController {
         def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
         println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
 		
-		def videos = Video.executeQuery("SELECT v FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " + 
+		def videos = Video.executeQuery("SELECT new Map(v.id as id, v.title as title, v.duration as duration, v.low as low, v.medium as medium, v.high as high, v.date as date, v.event as event) FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " +
 										"WHERE t.name = '${type}' AND th.name = '${q3}' AND v.duration <= ${totalDuration}")
-		int duration = 0
+		println videos.size()
+
+        int duration = 0
 		List<Video> videoPlaylist = new ArrayList<Video>()
 		for (video in videos) {
 			// if the video duration plus the sum of playlist exceeds the total, 
@@ -156,7 +169,15 @@ class VideoController {
 			if ((totalDuration - duration) < 300) break
 		}
 
-		//println videoPlaylist.size()		
+        videoPlaylist = videoPlaylist.sort { a, b ->
+            def rand = Math.random() 
+            if (rand <= 0.5) {
+                return -1
+            } else {
+                return +1
+            }
+        }
+
 		render videoPlaylist as JSON
 	}
 }
