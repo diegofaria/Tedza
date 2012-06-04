@@ -25,55 +25,39 @@
 		  </header>
 		  <div id="main" role="main">
 		  	<div id="breadcrumb"></div>
-		  	<div id="q1" class="question">
-				<h2>What kind of geek are you<span>?</span></h2>
-				<a href="javascript:void(0)" class="add">Suggest new...</a>
-				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>Hightech</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Design</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>Engaged</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Science</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Startup</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Travel</span></li>
-				</ul>
-			</div>
+		  	<div id="q1" class="question"></div>
 			<div id="q2" class="question">
 				<h2>How much time do you have now<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_5min.png" /></a><span>5 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_10min.png" /></a><span>10 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_15min.png" /></a><span>15 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_30min.png" /></a><span>30 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_45min.png" /></a><span>45 minutes</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_60min.png" /></a><span>60 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t5"><img src="/images/icon_5min.png" /></a><span>5 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t10"><img src="/images/icon_10min.png" /></a><span>10 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t15"><img src="/images/icon_15min.png" /></a><span>15 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t30"><img src="/images/icon_30min.png" /></a><span>30 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t45"><img src="/images/icon_45min.png" /></a><span>45 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t60"><img src="/images/icon_60min.png" /></a><span>60 minutes</span></li>
 				</ul>
 			</div>
 			<div id="q3" class="question">
 				<h2>Select a playlist <span>...</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)"><img src="/images/icon_hightech.png" /></a><span>What's Next in Tech</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_design.png" /></a><span>Tales of Invention</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_engaged.png" /></a><span>The Creative Spark</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_science.png" /></a><span>Technology, History and Destiny</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_startup.png" /></a><span>Medicine Without Borders</span></li>
-					<li><a href="javascript:void(0)"><img src="/images/icon_travel.png" /></a><span>Bold Predictions, Stern Warnings</span></li>
+					<li><a href="javascript:void(0)" id="p1"><img src="/images/icon_hightech.png" /></a><span>What's Next in Tech</span></li>
+					<li><a href="javascript:void(0)" id="p2"><img src="/images/icon_design.png" /></a><span>Tales of Invention</span></li>
+					<li><a href="javascript:void(0)" id="p3"><img src="/images/icon_engaged.png" /></a><span>The Creative Spark</span></li>
+					<li><a href="javascript:void(0)" id="p4"><img src="/images/icon_science.png" /></a><span>Technology, History and Destiny</span></li>
+					<li><a href="javascript:void(0)" id="p5"><img src="/images/icon_startup.png" /></a><span>Medicine Without Borders</span></li>
+					<li><a href="javascript:void(0)" id="p6"><img src="/images/icon_travel.png" /></a><span>Bold Predictions, Stern Warnings</span></li>
 				</ul>
-				<!--<form action="/" method="post">
-					<fieldset>-->
-						<input type="hidden" id="hq1" name="q1" value="" />
-						<input type="hidden" id="hq2" name="q2" value="" />
-						<input type="hidden" id="hq3" name="q3" value="" />
-						<!--<input type="submit" id="watchBtn" value="Watch" /> -->
-					<!--</fieldset>
-				</form>-->
 			</div>
-			<div id="video-player">
+			<div id="videoplayer">
 				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none" data-setup="{}">
 				   	<source src="" type='video/mp4' />
 				</video>
 			</div>
+			<input type="hidden" id="hq1" name="q1" value="" />
+			<input type="hidden" id="hq2" name="q2" value="" />
+			<input type="hidden" id="hq3" name="q3" value="" />
 		  </div>
 		  <!--
 		  <footer>
@@ -86,7 +70,7 @@
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 	  <script src="js/plugins.js"></script>
-	  <script src="js/script.js"></script>
+	  <script src="js/script2.js"></script>
 	  <script>
 	    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 	    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
