@@ -16,7 +16,7 @@
 	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	  <div class="page">
 		  <header>
-			<a href="/"><img src="/images/tedza.gif" /></a>
+			<a href="/"><img src="images/tedza.gif" /></a>
 			<!-- 
 			<ul>
 				<li>Anderson Gomes</li>
@@ -30,24 +30,24 @@
 				<h2>How much time do you have now<span>?</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)" id="t5"><img src="/images/icon_5min.png" /></a><span>5 minutes</span></li>
-					<li><a href="javascript:void(0)" id="t10"><img src="/images/icon_10min.png" /></a><span>10 minutes</span></li>
-					<li><a href="javascript:void(0)" id="t15"><img src="/images/icon_15min.png" /></a><span>15 minutes</span></li>
-					<li><a href="javascript:void(0)" id="t30"><img src="/images/icon_30min.png" /></a><span>30 minutes</span></li>
-					<li><a href="javascript:void(0)" id="t45"><img src="/images/icon_45min.png" /></a><span>45 minutes</span></li>
-					<li><a href="javascript:void(0)" id="t60"><img src="/images/icon_60min.png" /></a><span>60 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t5"><img src="images/icon_5min.png" /></a><span>5 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t10"><img src="images/icon_10min.png" /></a><span>10 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t15"><img src="images/icon_15min.png" /></a><span>15 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t30"><img src="images/icon_30min.png" /></a><span>30 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t45"><img src="images/icon_45min.png" /></a><span>45 minutes</span></li>
+					<li><a href="javascript:void(0)" id="t60"><img src="images/icon_60min.png" /></a><span>60 minutes</span></li>
 				</ul>
 			</div>
 			<div id="q3" class="question">
 				<h2>Select a playlist <span>...</span></h2>
 				<a href="javascript:void(0)" class="add">Suggest new...</a>
 				<ul class="buttons">
-					<li><a href="javascript:void(0)" id="p1"><img src="/images/icon_hightech.png" /></a><span>What's Next in Tech</span></li>
-					<li><a href="javascript:void(0)" id="p2"><img src="/images/icon_design.png" /></a><span>Tales of Invention</span></li>
-					<li><a href="javascript:void(0)" id="p3"><img src="/images/icon_engaged.png" /></a><span>The Creative Spark</span></li>
-					<li><a href="javascript:void(0)" id="p4"><img src="/images/icon_science.png" /></a><span>Technology, History and Destiny</span></li>
-					<li><a href="javascript:void(0)" id="p5"><img src="/images/icon_startup.png" /></a><span>Medicine Without Borders</span></li>
-					<li><a href="javascript:void(0)" id="p6"><img src="/images/icon_travel.png" /></a><span>Bold Predictions, Stern Warnings</span></li>
+					<li><a href="javascript:void(0)" id="p1"><img src="images/icon_hightech.png" /></a><span>What's Next in Tech</span></li>
+					<li><a href="javascript:void(0)" id="p2"><img src="images/icon_design.png" /></a><span>Tales of Invention</span></li>
+					<li><a href="javascript:void(0)" id="p3"><img src="images/icon_engaged.png" /></a><span>The Creative Spark</span></li>
+					<li><a href="javascript:void(0)" id="p4"><img src="images/icon_science.png" /></a><span>Technology, History and Destiny</span></li>
+					<li><a href="javascript:void(0)" id="p5"><img src="images/icon_startup.png" /></a><span>Medicine Without Borders</span></li>
+					<li><a href="javascript:void(0)" id="p6"><img src="images/icon_travel.png" /></a><span>Bold Predictions, Stern Warnings</span></li>
 				</ul>
 			</div>
 			<div id="videoplayer">

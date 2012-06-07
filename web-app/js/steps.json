@@ -6,7 +6,7 @@
         {
         	"id": "235",
             "title": "Hightech",
-            "img": "/images/icon_hightech.png",
+            "img": "images/icon_hightech.png",
             "options": [
                 {
                     "1": "What's Next in Tech",
@@ -21,7 +21,7 @@
         {
         	"id": "335",
             "title": "Design",
-            "img": "/images/icon_design.png",
+            "img": "images/icon_design.png",
             "options": [
                 {
                     "1": "What's Next in Tech",
@@ -36,7 +36,7 @@
         {
         	"id": "265",
             "title": "Engaged",
-            "img": "/images/icon_engaged.png",
+            "img": "images/icon_engaged.png",
             "options": [
                 {
                     "1": "What's Next in Tech",
@@ -51,7 +51,7 @@
         {
         	"id": "135",
             "title": "Science",
-            "img": "/images/icon_science.png",
+            "img": "images/icon_science.png",
             "options": [
                 {
                     "1": "What's Next in Tech",
@@ -66,7 +66,7 @@
         {
         	"id": "238",
             "title": "Startup",
-            "img": "/images/icon_startup.png",
+            "img": "images/icon_startup.png",
             "options": [
                 {
                     "1": "What's Next in Tech",
@@ -81,7 +81,7 @@
         {
         	"id": "534",
             "title": "Travel",
-            "img": "/images/icon_travel.png",
+            "img": "images/icon_travel.png",
             "options": [
                 {
                     "1": "What's Next in Tech",

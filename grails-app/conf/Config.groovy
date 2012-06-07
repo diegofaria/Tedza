@@ -64,7 +64,7 @@ environments {
     development {
         grails.logging.jul.usebridge = true 
         grails.serverURL = "http://localhost:8080"
-        grails.app.context = "/"
+        grails.app.context = "/tedza"
 		grails.gsp.enable.reload = true;
     }
     production {
