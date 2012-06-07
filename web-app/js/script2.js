@@ -4,19 +4,7 @@ var steps = {
 		
 	},
 	q2: function (){
-		$.getJSON("/static/js/steps.js", function(data) {
-			var html = '<h2>' + data.question1 + '</h2><a href="javascript:void(0)" class="add">Suggest new...</a><ul class="buttons">';
-			for (var i=0; i<data.list.length; i++) {
-				html += '<li><a href="javascript:void(0)" id="g' + data.list[i].id + '"><img src="' + data.list[i].img + '" /></a><span>' + data.list[i].title + '</span></li>';
-			}
-			html += '</ul>';
-			$("#q2").html(html);
-			
-			$("ul.buttons a").click(function () {
-				$("#h"+navigation.current).val(this.id.substring(1));
-				navigation.showNextStep();
-			});
-		});
+
 	},
 	q3: function (){
 		
@@ -49,7 +37,7 @@ $(function() {
 		}
 	});
 	
-	$.getJSON("/static/js/steps.js", function(data) {
+	$.getJSON("js/steps.json", function(data) {
 		var html = '<h2>' + data.question1 + '</h2><a href="javascript:void(0)" class="add">Suggest new...</a><ul class="buttons">';
 		for (var i=0; i<data.list.length; i++) {
 			html += '<li><a href="javascript:void(0)" id="g' + data.list[i].id + '"><img src="' + data.list[i].img + '" /></a><span>' + data.list[i].title + '</span></li>';
