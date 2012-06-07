@@ -70,7 +70,7 @@ environments {
     production {
         grails.logging.jul.usebridge = false
 		grails.gsp.enable.reload = false;
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://tedza.herokuapp.com"
     }
 }
 
