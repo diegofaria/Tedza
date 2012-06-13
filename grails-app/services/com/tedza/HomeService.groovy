@@ -16,12 +16,13 @@ class HomeService {
     	for (def tagMap in tags)
     	{
 	    	def themes = Video.executeQuery("""
-	    		SELECT
-	    			count(theme.name),
-	    			theme.id,
-	    			theme.name,
-	    			theme.description,
-	    			theme.imageUrl
+	    		SELECT new Map(
+				    		count(theme.name) as quantity,
+				    		theme.id as id,
+				    		theme.name as name,
+				    		theme.description as description,
+				    		theme.imageUrl as imageUrl
+			    			)
 	    		FROM Video v
 					join v.tags tag
 					join v.themes theme

@@ -11,6 +11,7 @@ class HomeController {
     def index() { 
 
     	def jsonFilter = homeService.buildTagFilters() as JSON;
+    	println jsonFilter
     	[jsonFilter:jsonFilter];
 
     }
