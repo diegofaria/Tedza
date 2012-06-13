@@ -16,10 +16,10 @@
 	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	  <div class="page">
 		  <header>
-			<a href="/"><img src="${resource(dir:'images',file:'tedza.gif')}"/></a>
+			<a href="/tedza"><img src="${resource(dir:'images',file:'tedza.gif')}"/></a>
 			<!-- 
 			<ul>
-				<li>Anderson Gomes</li>
+				<li>Usuário</li>
 			</ul>
 			 -->
 		  </header>
