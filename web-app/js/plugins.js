@@ -165,6 +165,8 @@ var Navigation = function ( args ) {
 
 	var listener = function ( object ) {
 		self.current = object;
+		if ( args.listener )
+			args.listener( object );
 	};
 
 	self.current = null;
