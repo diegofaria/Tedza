@@ -142,9 +142,9 @@ class VideoController {
     }
 	
 	def getResults() {
-		def q1 = params.q1
-		def q2 = params.q2
-		def q3 = params.q3
+		
+
+        println "\n\n\n" + params.dump()
 		
 		Type type = Type.byId(q1)
         def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
