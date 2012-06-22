@@ -42,17 +42,18 @@ var tedza = null;
 	function buildGeekChooserPanel() {
 		var ul = $("<ul class='buttons' />");
 		var dataList = loadedData.data;
-		for (var i=0; i< dataList.length; i++) {
+		$(dataList).each(function(i, data) {
 			ul.append(
 				 drawButton(
-				 	dataList[i].img,
-				 	dataList[i].label,
+				 	data.img,
+				 	data.label,
 				 	function () {
+				 		userProfile.geekLabel = data.label;
 						userProfile.geekType = i;
 						navigation.showNextStep();
 					})
 			 );
-		}
+		});
 
 		return $("<div />").append(
 			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
@@ -75,16 +76,16 @@ var tedza = null;
 	function buildSpendingTimeStep() {
 		var minutes = [ 5, 10, 15, 30, 45, 60 ];
 		var ul = $("<ul class='buttons' />");
-		for (var i=0; i< minutes.length; i++) {
+		$(minutes).each(function(i, minute) {
 			ul.append(
-				drawButton( "images/icon_" + minutes[i] + "min.png",
-					minutes[i] + " Minutos",
+				drawButton( "images/icon_" + minute + "min.png",
+					minute + " Minutos",
 					function () {
-						userProfile.spendingTime = minutes[i];
+						userProfile.spendingTime = minute;
 						navigation.showNextStep();
 					})
 			 );
-		}
+		});
 
 		return $("<div />").append(
 			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
@@ -104,19 +105,22 @@ var tedza = null;
 	 * Draw the Theme-Choose Panel
 	 */
 	function buildThemeChooserPanel() {
+
 		var ul = $("<ul class='buttons' />");
-		var themeList = loadedData.data[userProfile.geekType - 1].themes;
-		for (var i=0; i< themeList.length; i++) {
+		var themeList = loadedData.data[userProfile.geekType].themes;
+
+		$(themeList).each(function(i, theme){
 			ul.append(
-				 drawButton(
-				 	themeList[i].imageUrl,
-				 	themeList[i].name,
-				 	function () {
-						userProfile.themeId = themeList[i];
+				drawButton(
+				 	theme.imageUrl,
+				 	theme.name,
+				 	function (){
+						userProfile.themeId = theme.id;
 						navigation.showNextStep();
-					})
+					}
+				)
 			 );
-		}
+		});
 
 		return $("<div />").append(
 			$('<h2>' + loadedData.steps[0] + '</h2>'), ul

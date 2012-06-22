@@ -143,16 +143,26 @@ class VideoController {
 	
 	def getResults() {
 		
-
         println "\n\n\n" + params.dump()
 		
-		Type type = Type.byId(q1)
-        def totalDuration = Integer.parseInt(params.q2.split(" ")[0]) * 60
-        println "q1: " + type + "   duration: " + totalDuration + "    q3: " + q3
-		
-		def videos = Video.executeQuery("SELECT new Map(v.id as id, v.title as title, v.duration as duration, v.low as low, v.medium as medium, v.high as high, v.date as date, v.event as event) FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " +
-										"WHERE t.name = '${type}' AND th.name = '${q3}' AND v.duration <= ${totalDuration} " +
-										"order by random()")
+        def geekType = params.geekLabel
+        def themeId = params.themeId
+        def spendingTime = new Integer(params.spendingTime)
+
+        println geekType.getClass()
+        println geekType
+
+		Type type = Type.byId(geekType)
+        def totalDuration = spendingTime * 60
+		def query = "SELECT new Map(v.id as id, v.title as title, v.duration as duration, v.low as low, v.medium as medium, v.high as high, v.date as date, v.event as event) FROM Video AS v, IN (v.tags) AS t, IN (v.themes) AS th " +
+                    "WHERE t.name = '${type}' AND th.id = '${themeId}' AND v.duration <= ${totalDuration} " +
+                    "order by random()"
+
+        println query
+        println type.getClass()
+        println type
+
+		def videos = Video.executeQuery(query)
 		println videos.size()
 
         int duration = 0
