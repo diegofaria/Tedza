@@ -81,6 +81,7 @@ ul.buttons li:last-child { margin-right:0; }
 ul.buttons a { display:block; border:1px solid #d0d2d3; }
 ul.buttons a:hover { border:3px solid #ff2600; margin:-4px -2px !important; }
 ul.buttons li:hover span { display:block; }
+ul.buttons.themes img { width:145px; height:109px; }
 ul.buttons span { width:145px; margin-top:10px; font-size:18px; text-align:center; text-transform:uppercase; display:none; position:absolute; }
 input[type=submit] { display:none; margin-top:80px; padding:20px 60px; color:#959595; float:right; font-size:22px; font-weight:bold; text-transform:uppercase; border:1px solid #cbcdce; background-color:#FFF; }
 

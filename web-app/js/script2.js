@@ -1,12 +1,7 @@
-// APP Configuration
 var tedza = null;
 
 (function (tedza){
-
-	/**
-	 * Load application meta-data
-	 */
-	function loadData( callback ){
+	function loadData(callback){
 		$.ajax({
 			url:"home/applicationData",
 			dataType: "json",
@@ -18,13 +13,8 @@ var tedza = null;
 		});
 	}
 
-	/**
-	 * Draw the button
-	 */
 	function drawButton( image, label, callback ) {
-		var a = $("<a href='javascript:void(0)' />")
-						.click(callback);
-
+		var a = $("<a href='javascript:void(0)' />").click(callback);
 		var li = $("<li />")
 			.append(
 				a.append(
@@ -36,9 +26,6 @@ var tedza = null;
 		return li;
 	}
 
-	/**
-	 * Draw the Geek-Choose Panel
-	 */
 	function buildGeekChooserPanel() {
 		var ul = $("<ul class='buttons' />");
 		var dataList = loadedData.data;
@@ -60,19 +47,12 @@ var tedza = null;
 		);
 	}
 
-	/**
-	 * Dispatched when Geek-Panel step is initialized
-	 * @returns
-	 */
 	function onInitializeGeekStep () {
 		console.log("onInitializeGeekStep");
 		var html = buildGeekChooserPanel();
 		$("#q1").empty().append(html);
 	}
 
-	/**
-	 *
-	 */
 	function buildSpendingTimeStep() {
 		var minutes = [ 5, 10, 15, 30, 45, 60 ];
 		var ul = $("<ul class='buttons' />");
@@ -88,25 +68,18 @@ var tedza = null;
 		});
 
 		return $("<div />").append(
-			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
+			$('<h2>' + loadedData.steps[1] + '</h2>'), ul
 		);
 	}
 
-	/**
-	 * Dispatched when Spending Time step is initialized
-	 */
 	function onInitializeSpendingTimeStep () {
 		console.log("onInitializeSpendingTimeStep");
 		var html = buildSpendingTimeStep();
 		$("#q2").empty().append(html);
 	}
 
-	/**
-	 * Draw the Theme-Choose Panel
-	 */
 	function buildThemeChooserPanel() {
-
-		var ul = $("<ul class='buttons' />");
+		var ul = $("<ul class='buttons themes' />");
 		var themeList = loadedData.data[userProfile.geekType].themes;
 
 		$(themeList).each(function(i, theme){
@@ -123,25 +96,17 @@ var tedza = null;
 		});
 
 		return $("<div />").append(
-			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
+			$('<h2>' + loadedData.steps[2] + '</h2>'), ul
 		);
 	}
 
-	/**
-	 * Dispatched when Theme step is initialized
-	 */
 	function onInitializeThemeStep () {
 		console.log("onInitializeThemeStep");
 		var html = buildThemeChooserPanel();
 		$("#q3").empty().append(html);
 	}
 
-	/**
-	 * Dispatched when video player step is initialized
-	 * @returns
-	 */
 	function onInitializeVideoPlayerStep () {
-
 		$.ajax({
 			url:"video/getResults",
 			dataType: "json",
@@ -161,14 +126,11 @@ var tedza = null;
 		});
 	}
 
-	/**
-	 * Initialize the TedZa Application
-	 */
 	function initialize() {
 		loadData(function (){
 			navigation = new Navigation({
 				objects: ["q1","q2","q3","videoplayer"],
-				listener: function ( id ) {
+				listener: function (id) {
 					steps[id]();
 				}
 			});
@@ -187,7 +149,6 @@ var tedza = null;
 				videoplayer: onInitializeVideoPlayerStep
 		};
 
-	// On document ready, dispatch the TedZa initializer
 	$(initialize);
 
 })(tedza);
