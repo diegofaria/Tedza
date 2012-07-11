@@ -40,6 +40,8 @@ grails.project.dependency.resolution = {
 
     plugins {
         runtime ":hibernate:$grailsVersion"
+        build ":tomcat:$grailsVersion"
+
         runtime ":jquery:1.7.2"
 
 		compile(":cache-headers:1.1.5");
@@ -47,11 +49,5 @@ grails.project.dependency.resolution = {
 		runtime(":zipped-resources:1.0");
 		runtime(":cached-resources:1.0");
 		runtime(":yui-minify-resources:0.1.4");
-
-        compile(':heroku:1.0.1') {
-            exclude 'database-session'
-        }
-
-        build ":tomcat:$grailsVersion"
     }
 }
