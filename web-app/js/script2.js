@@ -39,6 +39,7 @@ var tedza = null;
 				 	function () {
 				 		userProfile.geekLabel = data.label;
 						userProfile.geekType = i;
+						userProfile.geekTags = data.tags.toString();
 						navigation.showNextStep();
 					})
 			 );
