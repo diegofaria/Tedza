@@ -31,7 +31,7 @@ class HomeService {
 					join v.tags tag
 					join v.themes theme
 				WHERE tag.name in :tags
-				group by theme.id, theme.name
+				group by theme.id, theme.name, theme.description, theme.imageUrl
 				order by 1 desc""", [tags:tagMap.tags], [max: 6]);
 
 	    	tagMap.put("themes", themes);
