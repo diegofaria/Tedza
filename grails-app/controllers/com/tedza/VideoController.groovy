@@ -142,9 +142,7 @@ class VideoController {
     }
 	
 	def getResults() {
-		
         println "\n\n\n" + params.dump()
-		
         def geekType = params.geekLabel
         def themeId = params.themeId
         def spendingTime = new Integer(params.spendingTime)
@@ -165,19 +163,13 @@ class VideoController {
 		def videos = Video.executeQuery(query)
 		println videos.size()
 
-        int duration = 0
+        int userTime = 0
 		List<Video> videoPlaylist = new ArrayList<Video>()
 		for (video in videos) {
-			// if the video duration plus the sum of playlist exceeds the total, 
-			// skip to the next
-			if ((video.duration + duration) > totalDuration) continue
-			
-			duration += video.duration
+			if ((video.duration + userTime) > totalDuration) continue
+			userTime += video.duration
 			videoPlaylist.add(video)
-			
-			// if the difference between the total minutes and playlist
-			// is lower than 5 minutes, the playlist is done
-			if ((totalDuration - duration) < 180) break
+			if ((totalDuration - userTime) < 180) break
 		}
 
 		render videoPlaylist as JSON
