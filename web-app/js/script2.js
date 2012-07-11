@@ -1,6 +1,8 @@
 var tedza = null;
 
 (function (tedza){
+	var breadcrumb = $("#breadcrumb");
+	
 	function loadData(callback){
 		$.ajax({
 			url:"home/applicationData",
@@ -12,7 +14,7 @@ var tedza = null;
 			}
 		});
 	}
-
+	
 	function drawButton( image, label, callback ) {
 		var a = $("<a href='javascript:void(0)' />").click(callback);
 		var li = $("<li />")
@@ -46,11 +48,19 @@ var tedza = null;
 			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
 		);
 	}
+	
+	function buildGeekBreadCrumb() {
+		breadcrumb.fadeOut("fast", function () {
+			breadcrumb.html("");
+			breadcrumb.fadeIn("slow");
+		});
+	}
 
 	function onInitializeGeekStep () {
 		console.log("onInitializeGeekStep");
 		var html = buildGeekChooserPanel();
 		$("#q1").empty().append(html);
+		buildGeekBreadCrumb();
 	}
 
 	function buildSpendingTimeStep() {
@@ -71,11 +81,19 @@ var tedza = null;
 			$('<h2>' + loadedData.steps[1] + '</h2>'), ul
 		);
 	}
+	
+	function buildSpendingTimeBreadCrumb() {
+		breadcrumb.fadeOut("fast", function () {
+			breadcrumb.html("IDEAS for <a href=\"javascript:void(0)\">" + userProfile.geekLabel + " GEEK</a>");
+			breadcrumb.fadeIn("slow");
+		});
+	}
 
 	function onInitializeSpendingTimeStep () {
 		console.log("onInitializeSpendingTimeStep");
 		var html = buildSpendingTimeStep();
 		$("#q2").empty().append(html);
+		buildSpendingTimeBreadCrumb();
 	}
 
 	function buildThemeChooserPanel() {
@@ -89,6 +107,7 @@ var tedza = null;
 				 	theme.name,
 				 	function (){
 						userProfile.themeId = theme.id;
+						userProfile.themeName = theme.name;
 						navigation.showNextStep();
 					}
 				)
@@ -99,14 +118,32 @@ var tedza = null;
 			$('<h2>' + loadedData.steps[2] + '</h2>'), ul
 		);
 	}
+	
+	function buildThemeBreadCrumb() {
+		var html = breadcrumb.html()  + " in <a href=\"javascript:void(0)\">" + userProfile.spendingTime + " MINUTES</a>";
+		breadcrumb.fadeOut("fast", function () {
+			breadcrumb.html(html);
+			breadcrumb.fadeIn("slow");
+		});
+	}
 
 	function onInitializeThemeStep () {
 		console.log("onInitializeThemeStep");
 		var html = buildThemeChooserPanel();
 		$("#q3").empty().append(html);
+		buildThemeBreadCrumb();
+	}
+	
+	function buildVideoBreadCrumb() {
+		var html = breadcrumb.html()  + " inside <a href=\"javascript:void(0)\">" + userProfile.themeName + "</a>";
+		breadcrumb.fadeOut("fast", function () {
+			breadcrumb.html(html);
+			breadcrumb.fadeIn("slow");
+		});
 	}
 
 	function onInitializeVideoPlayerStep () {
+		buildVideoBreadCrumb();
 		$.ajax({
 			url:"video/getResults",
 			dataType: "json",
