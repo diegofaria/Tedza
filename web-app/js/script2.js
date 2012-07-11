@@ -79,7 +79,7 @@ var tedza = null;
 	}
 
 	function buildThemeChooserPanel() {
-		var ul = $("<ul class='buttons' />");
+		var ul = $("<ul class='buttons themes' />");
 		var themeList = loadedData.data[userProfile.geekType].themes;
 
 		$(themeList).each(function(i, theme){
