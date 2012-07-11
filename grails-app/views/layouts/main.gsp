@@ -6,7 +6,6 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="css/style.css">
-		<script src="${resource(dir:'js',file:'modernizr-2.5.3.min.js')}"></script>
 		<g:layoutHead/>
         <r:layoutResources />
 	</head>
