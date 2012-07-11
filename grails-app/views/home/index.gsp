@@ -16,12 +16,7 @@
 	  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	  <div class="page">
 		  <header>
-			<a href="/"><img src="images/tedza.gif" /></a>
-			<!-- 
-			<ul>
-				<li>Anderson Gomes</li>
-			</ul>
-			 -->
+			<a href="${createLink(controller:'home')}"><img src="images/tedza.gif" /></a>
 		  </header>
 		  <div id="main" role="main">
 		  	<div id="breadcrumb"></div>
