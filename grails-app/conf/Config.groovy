@@ -63,14 +63,11 @@ grails.hibernate.cache.queries = true
 environments {
     development {
         grails.logging.jul.usebridge = true 
-        grails.serverURL = "http://localhost:8080"
-        grails.app.context = "/tedza"
 		grails.gsp.enable.reload = true;
     }
     production {
         grails.logging.jul.usebridge = false
 		grails.gsp.enable.reload = false;
-        grails.serverURL = "http://tedza.herokuapp.com"
     }
 }
 
