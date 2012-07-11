@@ -114,8 +114,10 @@ var tedza = null;
 			type: "POST",
 			success: function(data) {
 				if (data.length > 0) {	
-			  		player.src(data[0].high);
-			  		player.play();
+					var video = $("#player")[0];
+					video.src = data[0].high;
+					video.load();
+					video.play();
 			  	}
 			  	else {
 			  		alert('no videos found');
@@ -126,7 +128,6 @@ var tedza = null;
 
 	function initialize() {
 		loadData(function (){
-			player = _V_("player");
 			navigation = new Navigation({
 				objects: ["q1","q2","q3","videoplayer"],
 				listener: function (id) {
