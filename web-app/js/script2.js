@@ -68,7 +68,7 @@ var tedza = null;
 		});
 
 		return $("<div />").append(
-			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
+			$('<h2>' + loadedData.steps[1] + '</h2>'), ul
 		);
 	}
 
@@ -96,7 +96,7 @@ var tedza = null;
 		});
 
 		return $("<div />").append(
-			$('<h2>' + loadedData.steps[0] + '</h2>'), ul
+			$('<h2>' + loadedData.steps[2] + '</h2>'), ul
 		);
 	}
 
