@@ -35,21 +35,13 @@
 				</ul>
 			</div>
 			<div id="videoplayer">
-				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none" data-setup="{}">
-				   	<source src="" type='video/mp4' />
+				<video id="player" class="video-js vjs-default-skin" height="450" width="562" controls preload="none">
 				</video>
 			</div>
 			<input type="hidden" id="hq1" name="q1" value="" />
 			<input type="hidden" id="hq2" name="q2" value="" />
 			<input type="hidden" id="hq3" name="q3" value="" />
 		  </div>
-		  <!--
-		  <footer>
-			<a href="javascript:void(0)">Subscribe</a>
-			<a href="javascript:void(0)">Team</a>
-			<a href="javascript:void(0)">About</a>
-		  </footer>
-		  -->
 	  </div>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
