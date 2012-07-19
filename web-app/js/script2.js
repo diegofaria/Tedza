@@ -70,7 +70,7 @@ var tedza = null;
 		$(minutes).each(function(i, minute) {
 			ul.append(
 				drawButton( "images/icon_" + minute + "min.png",
-					minute + " Minutos",
+					minute + " Minutes",
 					function () {
 						userProfile.spendingTime = minute;
 						navigation.showNextStep();
